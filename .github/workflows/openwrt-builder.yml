@@ -18,7 +18,7 @@ on:
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
-  REPO_BRANCH: V23.05.4
+  REPO_BRANCH: v23.05.4
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
   DTS_FILE: mt7621_jdcloud_re-cp-02.dts
