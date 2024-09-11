@@ -27,7 +27,7 @@ env:
   02NETWORK_FILE: network
   CONFIGBUILDIN_FILE: Config-build.in
   DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
+#  DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -84,9 +84,9 @@ jobs:
         [ -e $BOOTCOUNT_FILE ] && mv $BOOTCOUNT_FILE openwrt/target/linux/ramips/mt7621/base-files/etc/init.d/bootcount
         [ -e $02NETWORK_FILE ] && mv $02NETWORK_FILE openwrt/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
         [ -e $CONFIGBUILDIN_FILE ] && mv $CONFIGBUILDIN_FILE openwrt/Config-build.in
-        chmod +x $DIY_P2_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
+       # chmod +x $DIY_P2_SH
+       # cd openwrt
+       # $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: Download package
       id: package
