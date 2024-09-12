@@ -24,7 +24,7 @@ env:
   DTS_FILE: mt7621_jdcloud_re-cp-02.dts
   MK_FILE: mt7621.mk
   BOOTCOUNT_FILE: bootcount
-  02NETWORK_FILE: network
+  02NETWORK_FILE: 02_network
 #  DIY_P1_SH: diy-part1.sh
 #  DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
