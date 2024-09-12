@@ -76,7 +76,6 @@ jobs:
 
     - name: Load custom configuration
       run: |
-        [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         [ -e $DTS_FILE ] && mv $DTS_FILE openwrt/target/linux/ramips/dts/mt7621_jdcloud_re-cp-02.dts
         [ -e $MK_FILE ] && mv $MK_FILE openwrt/target/linux/ramips/image/mt7621.mk
