@@ -24,7 +24,7 @@ env:
   DTS_FILE: mt7621_jdcloud_re-cp-02.dts
   MK_FILE: mt7621.mk
   BOOTCOUNT_FILE: bootcount
-  02NETWORK_FILE: 02_network
+  NETWORK_FILE: network
   ENV_FILE: ramips
 #  DIY_P1_SH: diy-part1.sh
 #  DIY_P2_SH: diy-part2.sh
@@ -135,17 +135,17 @@ jobs:
             echo "$ENV_FILE does not exist."
           fi
 
-          # Check 02NETWORK_FILE
-          echo "02 Network File: $02NETWORK_FILE"
+          # Check NETWORK_FILE
+          echo "Network File: $NETWORK_FILE"
           if [ -e openwrt/target/linux/ramips/mt7621/base-files/etc/board.d/02_network ]; then
             echo "Deleting existing 02 Network file..."
             rm openwrt/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
           fi
-          if [ -e $02NETWORK_FILE ]; then
-            mv $02NETWORK_FILE openwrt/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+          if [ -e $NETWORK_FILE ]; then
+            mv $NETWORK_FILE openwrt/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
             cat openwrt/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
           else
-            echo "$02NETWORK_FILE does not exist."
+            echo "$NETWORK_FILE does not exist."
           fi
 
           echo "Changes made, if any."
