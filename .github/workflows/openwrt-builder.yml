@@ -25,6 +25,7 @@ env:
   MK_FILE: mt7621.mk
   BOOTCOUNT_FILE: bootcount
   02NETWORK_FILE: 02_network
+  ENV_FILE: ramips
 #  DIY_P1_SH: diy-part1.sh
 #  DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -120,6 +121,18 @@ jobs:
             mv $BOOTCOUNT_FILE openwrt/target/linux/ramips/mt7621/base-files/etc/init.d/bootcount
           else
             echo "$BOOTCOUNT_FILE does not exist."
+          fi
+
+          # Check ENV_FILE
+          echo "Bootcount File: $ENV_FILE"
+          if [ -e openwrt/package/boot/uboot-envtools/files/ramips ]; then
+            echo "Deleting existing ENV file..."
+            rm openwrt/package/boot/uboot-envtools/files/ramips
+          fi
+          if [ -e $ENV_FILE ]; then
+            mv $ENV_FILE openwrt/package/boot/uboot-envtools/files/ramips
+          else
+            echo "$ENV_FILE does not exist."
           fi
 
           # Check 02NETWORK_FILE
