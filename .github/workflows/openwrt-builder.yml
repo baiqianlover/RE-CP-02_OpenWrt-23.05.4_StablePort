@@ -143,6 +143,7 @@ jobs:
           fi
           if [ -e $02NETWORK_FILE ]; then
             mv $02NETWORK_FILE openwrt/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+            cat openwrt/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
           else
             echo "$02NETWORK_FILE does not exist."
           fi
