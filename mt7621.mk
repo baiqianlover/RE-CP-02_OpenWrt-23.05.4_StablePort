@@ -192,7 +192,7 @@ define Device/jdcloud_re-cp-02
   IMAGE_SIZE := 16000k
   DEVICE_VENDOR := JDCloud
   DEVICE_MODEL := RE-CP-02
-  DEVICE_PACKAGES := kmod-mt7915-firmware kmod-sdhci-mt7620 automount
+  DEVICE_PACKAGES := kmod-mt7915-firmware kmod-sdhci-mt7620
 endef
 TARGET_DEVICES += jdcloud_re-cp-02
 
