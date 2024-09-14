@@ -83,6 +83,7 @@ jobs:
           echo "Config File: $CONFIG_FILE"
           if [ -e $CONFIG_FILE ]; then
             mv $CONFIG_FILE openwrt/.config
+            echo "file replaced"
           else
             echo "$CONFIG_FILE does not exist."
           fi
@@ -95,6 +96,7 @@ jobs:
           fi
           if [ -e $DTS_FILE ]; then
             mv $DTS_FILE openwrt/target/linux/ramips/dts/mt7621_jdcloud_re-cp-02.dts
+            echo "file inserted"
           else
             echo "$DTS_FILE does not exist."
           fi
@@ -107,6 +109,7 @@ jobs:
           fi
           if [ -e $MK_FILE ]; then
             mv $MK_FILE openwrt/target/linux/ramips/image/mt7621.mk
+            echo "file replaced"
           else
             echo "$MK_FILE does not exist."
           fi
@@ -119,6 +122,7 @@ jobs:
           fi
           if [ -e $BOOTCOUNT_FILE ]; then
             mv $BOOTCOUNT_FILE openwrt/target/linux/ramips/mt7621/base-files/etc/init.d/bootcount
+            echo "file replaced"
           else
             echo "$BOOTCOUNT_FILE does not exist."
           fi
@@ -131,6 +135,7 @@ jobs:
           fi
           if [ -e $ENV_FILE ]; then
             mv $ENV_FILE openwrt/package/boot/uboot-envtools/files/ramips
+            echo "file replaced"
           else
             echo "$ENV_FILE does not exist."
           fi
@@ -143,6 +148,7 @@ jobs:
           fi
           if [ -e $NETWORK_FILE ]; then
             mv $NETWORK_FILE openwrt/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+            echo "file replaced"
           else
             echo "$NETWORK_FILE does not exist."
           fi
