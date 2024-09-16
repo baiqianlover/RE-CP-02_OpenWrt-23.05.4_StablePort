@@ -79,6 +79,15 @@ jobs:
       run: |
           echo "Checking for existing files..."
 
+        # Check CONFIG_FILE
+          echo "Config File: $CONFIG_FILE"
+          if [ -e $CONFIG_FILE ]; then
+            mv $CONFIG_FILE openwrt/.config
+            echo "file replaced"
+          else
+            echo "$CONFIG_FILE does not exist."
+          fi
+          
           # Check DTS_FILE
           echo "DTS File: $DTS_FILE"
           if [ -e openwrt/target/linux/ramips/dts/mt7621_jdcloud_re-cp-02.dts ]; then
@@ -153,16 +162,6 @@ jobs:
       id: package
       run: |
         cd openwrt
-        make defconfig
-        # Check CONFIG_FILE
-          echo "Config File: $CONFIG_FILE"
-          if [ -e $CONFIG_FILE ]; then
-            mv $CONFIG_FILE openwrt/.config
-            echo "file replaced"
-          else
-            echo "$CONFIG_FILE does not exist."
-          fi
-          
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
