@@ -79,8 +79,6 @@ jobs:
       run: |
           echo "Checking for existing files..."
 
-        # Check CONFIG_FILE
-          echo "Config File: $CONFIG_FILE"
           if [ -e $CONFIG_FILE ]; then
             mv $CONFIG_FILE openwrt/.config
             echo "file replaced"
